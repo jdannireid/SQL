@@ -1,0 +1,27 @@
+-- Create a Video Game Store database
+
+CREATE TABLE games ( id INTEGER PRIMARY KEY, name TEXT, price INTEGER, release_year INTEGER, rating INTEGER);
+
+INSERT INTO games VALUES
+(1, "WOW", 59, 2000, 1),
+(2, "Red Dead Redemtion", 40, 2002, 2),
+(3, "GTA", 30, 1995, 3),
+(4, "Harry Potter", 55, 1990, 4),
+(5, "Zelda", 20, 1997, 5),
+(6, "Bounce", 5, 2014, 6),
+(7, "Portals", 67, 2020, 7),
+(8, "COD", 100, 2003, 8),
+(9, "Help", 58, 2023, 9),
+(10, "Sabrina the Witch", 1000, 1999, 10),
+(11, "Bobs Burgers", 20, 2014, 11),
+(12, "Hi", 60, 2015, 12),
+(13, "Loser", 70, 2018, 13),
+(14, "A Good Game", 90, 2015, 14),
+(15, "Mario Party", 50, 2013, 15)
+;
+
+
+-- Display database by price and show the sum price of all games
+SELECT * FROM games ORDER BY price ;
+SELECT SUM(price) FROM games
+
