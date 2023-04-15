@@ -233,3 +233,9 @@ SELECT COUNT(name) AS number_of_countries,
     END AS migrant_flow
 FROM countries
 GROUP BY migrant_flow;
+
+SELECT name, fertility_rate, median_age FROM countries WHERE fertility_rate < 1.7 AND median_age < 50;
+
+SELECT name AS largest_countries, area_sq_km FROM countries
+GROUP BY area_sq_km HAVING area_sq_km > 1000000;
+
