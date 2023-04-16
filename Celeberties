@@ -1,0 +1,62 @@
+CREATE TABLE celeberties 
+    (id INTEGER PRIMARY KEY,
+    name TEXT,
+    birth_month TEXT,
+    age INTEGER,
+    occupation TEXT);
+    
+INSERT INTO celeberties VALUES
+(1,"Johnny Depp", "June", 59, "Actor"),
+(2, "Jim Carrey", "January", 61, "Actor"),
+(3, "Emma Watson", "April",33, "Actress"),
+(4, "Taylor Swift", "December", 33, "Musician"),
+(5, "Selena Gomez", "July", 30, "Musician"),
+(6, "Kate Winslet", "October", 47, "Actress"),
+(7, "Leonardo DiCaprio", "November", 48, "Actor"),
+(8, "Morgan Freeman", "June", 85, "Actor"),
+(9, "Will Smith", "September", 54, "Actor"),
+(10, "Daniel Radcliffe", "July", 33, "Actor");
+
+CREATE TABLE movie_partners
+    (id INTEGER PRIMARY KEY,
+    celeberty_id1 INTEGER,
+    celeberty_id2 INTEGER,
+    title TEXT);
+    
+INSERT INTO movie_partners VALUES
+(1, 10, 3, "Harry Potter"),
+(2, 8, 2, "Bruce All Mighty"),
+(3, 5, 7, "Titanic"),
+(4, 7, 1, "What's Eating Gilbert Grape"),
+(5, 2, 5, "Horton Hears a Who");
+
+CREATE TABLE friends 
+    (id INTEGER PRIMARY KEY,
+    friend1 INTEGER,
+    friend2 INTEGER);
+
+INSERT INTO friends VALUES
+(1, 4, 5),
+(2, 6, 7);
+
+/* Age of celeberties youngest to oldest*/
+SELECT name, age FROM celeberties
+    ORDER BY age;
+
+/* Average age of celeberties */
+SELECT AVG(age) AS average_age 
+    FROM celeberties;
+    
+ /*Celeberties who have been movie partners*/
+ SELECT a.name, b.name, title FROM movie_partners
+    JOIN celeberties a
+    ON movie_partners.celeberty_id1 = a.id
+    JOIN celeberties b
+    ON movie_partners.celeberty_id2 = b.id;
+
+/* Celeberties who are known friends*/
+SELECT c.name, d.name FROM friends
+    JOIN celeberties c
+    ON friends.friend1 = c.id
+    JOIN celeberties d
+    ON friends.friend2 = d.id\==-0
