@@ -1,4 +1,4 @@
-#Here I am querying a Netflix database and answering the following questions.
+#Here I am querying a Netflix database and answering the following questions with PostgreSQL.
 
 #1. How many movie titles are there in the database? (movies only, not tv shows) 
 SELECT title, type 
